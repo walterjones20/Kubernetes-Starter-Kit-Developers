@@ -3,15 +3,15 @@ kind: Ingress
 metadata:
   name: ingress-quote
   namespace: backend
-  # annotations:
-  #   cert-manager.io/issuer: letsencrypt-nginx
+  annotations:
+    cert-manager.io/issuer: letsencrypt-nginx
 spec:
-  # tls:
-  #   - hosts:
-  #     - quote.starter-kit.online
-  #     secretName: letsencrypt-nginx-quote
+  tls:
+  - hosts:
+      - quote.tavci-lab.com
+    secretName: letsencrypt-nginx-quote
   rules:
-    - host: quote.starter-kit.online
+    - host: quote.tavci-lab.com
       http:
         paths:
           - path: /
